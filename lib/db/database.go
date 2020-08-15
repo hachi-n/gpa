@@ -25,6 +25,23 @@ type Record struct {
 
 func NewDatabase() *Database {
 	databaseFilePath := databaseFilePath()
+	databaseDir := filepath.Dir(databaseFilePath)
+
+	if _, err := os.Stat(databaseDir); err != nil {
+		if err := os.MkdirAll(databaseDir, 0755); err != nil {
+			fmt.Printf("can not create database directory. database directory: %s\n", databaseDir)
+			os.Exit(1)
+		}
+	}
+
+	b, err := file.Read(databaseFilePath)
+	if err != nil || len(b) == 0 {
+		if err := file.Create(databaseFilePath, []byte("{}")); err != nil {
+			fmt.Printf("can not create database file. database file: %s\n", databaseFilePath)
+			os.Exit(1)
+		}
+	}
+
 	return &Database{
 		Path: databaseFilePath,
 	}
@@ -101,13 +118,6 @@ func (d *Database) Update(configPath string) error {
 }
 
 func (d *Database) writeDatabase() error {
-	databaseDir := filepath.Dir(d.Path)
-	if _, err := os.Stat(databaseDir); err != nil {
-		if err := os.MkdirAll(databaseDir, 0755); err != nil {
-			return err
-		}
-	}
-
 	b, err := generateJsonBytes(d)
 	if err != nil {
 		return err
