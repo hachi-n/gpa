@@ -1,0 +1,17 @@
+{
+   "project1":{
+      "Makefile":"templates/tools/build/Makefile",
+      "README.md":"templates/documents/readme/README.md",
+      "config": {
+          "application.json": ""
+      },
+      "cli":{
+         "${ProjectName}":{
+            "main.go": "templates/lang/golang/main/hello.go"
+         }
+      },
+      "internal":{
+         ".keep":""
+      }
+   }
+}
