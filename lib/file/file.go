@@ -9,6 +9,7 @@ func Read(filePath string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
+	defer f.Close()
 
 	info, err := f.Stat()
 	if err != nil {
@@ -27,6 +28,8 @@ func Create(name string, content []byte) error {
 	if err != nil {
 		return err
 	}
+	defer f.Close()
+
 	_, err = f.Write(content)
 	if err != nil {
 		return err
