@@ -7,23 +7,23 @@ project architecture generator
 
 #### example
 ```
-{↲
-   "goProject":{↲
-      "Makefile":"templates/tools/build/Makefile",↲
-      "README.md":"templates/documents/readme/README.md",↲
-      "config": {↲
-          "application.json": ""↲
+{
+   "goProject":{
+      "Makefile":"templates/tools/build/Makefile",
+      "README.md":"templates/documents/readme/README.md",
+      "config": {
+          "application.json": ""
       },↲
-      "cli":{↲
-         "${ProjectName}":{↲
-            "main.go": "templates/lang/golang/main/hello.go"↲
-         }↲
+      "cli":{
+         "${ProjectName}":{
+            "main.go": "templates/lang/golang/main/hello.go"
+         }
       },↲
-      "internal":{↲
-         ".keep":""↲
-      }↲
-   }↲
-}↲
+      "internal":{
+         ".keep":""
+      }
+   }
+}
 ```
 ### Install
 ```
