@@ -3,7 +3,7 @@ package generator
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/hachi-n/gpa/lib/file"
+	"github.com/hachi-n/pag/lib/file"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -92,13 +92,14 @@ func projectArchitectureGenerator(projectName, output string) func(string, inter
 	return projectGenerateFunc
 }
 
-func defaultVariableMap(projectName string) map[string]string{
+func defaultVariableMap(projectName string) map[string]string {
 	variableMap := make(map[string]string)
 	variableMap["ProjectName"] = projectName
 	return variableMap
 }
 
 var variableRegexp = regexp.MustCompile(`\$\{.*?\}`)
+
 func convertVariableName(baseName string, variableMap map[string]string) string {
 	if !variableRegexp.MatchString(baseName) {
 		return baseName

@@ -1,6 +1,6 @@
 package add
 
-import "github.com/hachi-n/gpa/lib/db"
+import "github.com/hachi-n/pag/lib/db"
 
 func Apply(configPath string) error {
 	database, err := db.LoadDatabase()

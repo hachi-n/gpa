@@ -1,8 +1,5 @@
-module github.com/hachi-n/gpa
+module github.com/hachi-n/pag
 
 go 1.14
 
-require (
-	github.com/markbates/pkger v0.17.0
-	github.com/urfave/cli/v2 v2.2.0
-)
+require github.com/urfave/cli/v2 v2.2.0

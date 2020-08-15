@@ -2,7 +2,7 @@ package show
 
 import (
 	"fmt"
-	"github.com/hachi-n/gpa/lib/db"
+	"github.com/hachi-n/pag/lib/db"
 )
 
 func Apply(projectType string) error {

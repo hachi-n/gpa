@@ -2,7 +2,7 @@ go-clean:
 	rm -fr ./pkg
 
 go-build:
-	go build  -o ./pkg/gpa ./cli/gpa
+	go build  -o ./pkg/pag ./cli/pag
 
 build:
 	$(MAKE) go-clean
@@ -10,7 +10,7 @@ build:
 
 install:
 	$(MAKE) build
-	cp -pr ./pkg/gpa /usr/local/bin
+	cp -pr ./pkg/pag /usr/local/bin
 
 uninstall:
-	rm -fr /usr/local/bin/gpa
+	rm -fr /usr/local/bin/pag

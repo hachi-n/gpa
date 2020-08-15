@@ -8,6 +8,9 @@ import (
 
 func main() {
 	app := &cli.App{
+		Name: "pag",
+		Usage: "Project Generator.",
+		Description: "Project Architecture Generator.",
 		Commands: []*cli.Command{
 			addCommand(),
 			listCommand(),

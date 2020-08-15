@@ -3,14 +3,14 @@ package db
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/hachi-n/gpa/lib/file"
+	"github.com/hachi-n/pag/lib/file"
 	"os"
 	"path/filepath"
 	"strings"
 )
 
 const (
-	databaseFile = ".config/gpa/database.json"
+	databaseFile = ".config/pag/database.json"
 )
 
 type Database struct {
