@@ -16,6 +16,7 @@ func main() {
 			listCommand(),
 			applyCommand(),
 			showCommand(),
+			cleanupCommand(),
 		},
 	}
 

@@ -36,3 +36,7 @@ func Create(name string, content []byte) error {
 	}
 	return nil
 }
+
+func Delete(filePath string) error {
+	return os.Remove(filePath)
+}

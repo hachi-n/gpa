@@ -163,3 +163,7 @@ func (d *Database) Show(projectType string) (string, error) {
 
 	return string(jsonBytes), nil
 }
+
+func (d *Database) Destroy() error {
+	return file.Delete(d.Path)
+}
